@@ -2,7 +2,7 @@
 namespace SDMagentoModules\SDPurchaseOrder\Model\Ui;
 
 use Magento\Checkout\Model\ConfigProviderInterface;
-use Magento\SamplePaymentGateway\Gateway\Http\Client\ClientMock;
+use SDMagentoModules\SDPurchaseOrder\Gateway\Http\Client\ClientMock;
 
 final class ConfigProvider implements ConfigProviderInterface
 {
