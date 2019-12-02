@@ -6,15 +6,34 @@
 /*global define*/
 define(
     [
-        'Magento_Checkout/js/view/payment/default'
+        'Magento_Checkout/js/view/payment/default',
+        "jquery",
+        "jquery-ui"
     ],
-    function (Component) {
-        'use strict';
+    function (Component, $, ui) {
+        'use strict';  
+
+        
 
         return Component.extend({
             defaults: {
                 template: 'SDMagentoModules_SDPurchaseOrder/payment/form',
                 transactionResult: ''
+            },
+
+            startUpload : function()
+            {
+                let element = document.getElementById("po_order_field");
+                element.onchange = (event)=>
+                {
+                    console.log("input change", event);
+                    let fullPath = element.value;
+                    console.log("file: " + fullPath);
+
+
+                    $("#po_order_pick_button").hide();
+                }
+                element.click();
             },
 
             initObservable: function () {
