@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+  <type name="Magento\OfflinePayments\Model\Purchaseorder">
+    <plugin name="sd_purchaseorder_checkout_upload_field_purchase_order_plugin" type="SDMagentoModules\SDPurchaseOrder\Plugin\OfflinePayments\Model\PurchaseOrderPlugin" sortOrder="1"></plugin>
+  </type>
+  <preference for="Magento\OfflinePayments\Block\Info\Purchaseorder" type="SDMagentoModules\SDPurchaseOrder\Block\Info\PurchaseOrder" />
+  <type name="SDMagentoModules\SDPurchaseOrder\Model\ImageUploader">
+    <arguments>
+        <argument name="baseTmpPath" xsi:type="string">po_files/tmp</argument>
+        <argument name="basePath" xsi:type="string">po_files</argument>
+        <argument name="allowedExtensions" xsi:type="array">
+            <item name="jpg" xsi:type="string">jpg</item>
+            <item name="jpeg" xsi:type="string">jpeg</item>
+            <item name="png" xsi:type="string">png</item>
+            <item name="pdf" xsi:type="string">pdf</item>
+        </argument>
+    </arguments>
+  </type>
+
+</config>
