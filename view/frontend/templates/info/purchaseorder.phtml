@@ -9,15 +9,8 @@
         <strong><?php echo $block->escapeHtml(__('Purchase Order Number')) ?></strong>
         <span class="number"><?php echo $block->escapeHtml($block->getPoNumber()) ?></span>
         <br />
-
-
-        <strong><?php echo $block->escapeHtml(__('Purchase Order File')) ?></strong>
+        <strong class="teststyle"><?php echo $block->escapeHtml(__('Purchase Order File')) ?></strong>
         <?php echo $block->getPurchaseorderFileLink() ?: __('N/A') ?>
         <br />
-
-
-        
-
-
     </dd>
 </dl>
